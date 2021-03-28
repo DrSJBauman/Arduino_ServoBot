@@ -1,2 +1,2 @@
 # Arduino_ServoBot
-Now using branches to contain updated versions of the code as I continue updating the bot hardware and increasing functionality.
+Split sketches for ease of use, added forward/reverse + right/left turning control, modified input declarations, added comments.
