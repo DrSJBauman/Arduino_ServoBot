@@ -1,2 +1,2 @@
 # Arduino_ServoBot
-Now using branches to contain updated versions of the code as I continue updating the bot hardware and increasing functionality.
+Updated code for my homemade Arduino robot, now incorporating leaf switches for front right/left impact sensing.
