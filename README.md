@@ -1,2 +1,1 @@
-v2 adds additional functionality to the bot - specifically turning while moving forward
- or in reverse
+v3 Incorporates the front leaf switch bumpers to prepare the bot for some autonomous driving.
