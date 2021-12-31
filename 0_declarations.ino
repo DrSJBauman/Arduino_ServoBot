@@ -7,8 +7,8 @@
 //  Constants
 //===============================================================================
 // Here we have a bunch of constants that will become clearer when we look at the
-// nesRead() function. Basically, we will use these contents to clear
-// a bit. These are chosen according to the table in ServoBot_NES_Controller_vX.ino.
+// readNesController() function. Basically, we will use these contents to clear
+// a bit. These are chosen according to the table above.
 const short A_BUTTON         = 0;
 const short B_BUTTON         = 1;
 const short SELECT_BUTTON    = 2;
