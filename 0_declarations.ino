@@ -29,6 +29,7 @@ byte nesRegister  = 0;    // We will use this to hold current button states
 int pbLeft = 0;           // Var for left bump (high/low)
 int pbRight = 0;          // Var for right bump (high/low)
 int drvMode = 0;          // Var for drive mode (high/low)
+unsigned int duration, inches, cm;  // Var for time and distance measured by ultrasonic sensor
 
 //===============================================================================
 //  Pin Declarations
@@ -38,10 +39,12 @@ const short nesData = 7;        // The data pin for the NES controller
 const short bumpL = 2;          // The input from left leaf switch bumper
 const short bumpR = 3;          // The input from right leaf switch bumper
 const short driveMode = 4;      // Input from the auto/manual drive mode switch
-const int ledPin = 13;          // Built-in LED
+const short ledPin = 13;        // Built-in LED
+const short echoPin = 12;       // Echo pin on the ultrasonic distance sensor.
 
 //Outputs:
-const short nesClock = 5;      // The clock pin for the NES controller
-const short nesLatch = 6;      // The latch pin for the NES controller
-const short LServoPin = 9;     // The pin for the left servo motor
-const short RServoPin = 10;    // The pin for the right servo motor
+const short nesClock = 5;       // The clock pin for the NES controller
+const short nesLatch = 6;       // The latch pin for the NES controller
+const short LServoPin = 9;      // The pin for the left servo motor
+const short RServoPin = 10;     // The pin for the right servo motor
+const short trigPin = 11;       // Trigger pin on the ultrasonic distance sensor

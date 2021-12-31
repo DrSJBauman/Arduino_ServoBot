@@ -5,33 +5,22 @@ void loop() {
 
   // Check the auto/manual drive mode switch to determine which loop code to utilize
   drvMode = digitalRead(driveMode);
-  if (drvMode == HIGH) {          // Auto drive mode toggled on
+  if (drvMode == HIGH) {          // Auto drive mode toggled ON = HIGH
 
     showLED();                    // Show LED indicator
     slowForward();                // Start forward automatically
 
+    // Test ultrasonic sensor distance
+    Serial.print("Ultrasonic read distance = ");
+    Serial.print(sonarRead(), DEC); // Show ultrasonic sensor distance in Serial Monitor
+    Serial.print(" cm");
+    Serial.println();
+
     // Test bumper switches
-    pbLeft = digitalRead(bumpL);
-    pbRight = digitalRead(bumpR);
-
-    if (pbLeft == HIGH) {         // If left bumper hit
-      Serial.println("Left bump, autosteering");
-      slowReverse();
-      delay(500);
-      slowRight();
-      delay(1000);
-    }
-
-    if (pbRight == HIGH) {        // If right bumper hit
-      Serial.println("Right bump, autosteering");
-      slowReverse();
-      delay(500);
-      slowLeft();
-      delay(1000);
-    }
+    bumpTest();
   }
 
-  else {                              // Auto drive mode toggled off
+  else {                              // Auto drive mode toggled OFF = LOW
     // Manual drive mode condition:
   
     // This function call will return the states of all NES controller's register
@@ -144,7 +133,7 @@ void loop() {
     }
 
   }
-    // Slight delay before we debug what was pressed so we don't spam the
-    // serial monitor.
-    delay(100);
+  // Slight delay before we debug what was pressed so we don't spam the
+  // serial monitor.
+  delay(50);
 }

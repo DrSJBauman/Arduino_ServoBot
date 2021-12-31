@@ -7,7 +7,7 @@
     E-mail......... sjbauman0@gmail.com
     Started........ 10/11/2019
     Finished....... xx/xx/20XX
-    Updated........ 03/12/2021
+    Updated........ 12/25/2021
  
 ================================================================================
    Notes
@@ -63,4 +63,7 @@ From v2:
 - try to add a slow down function so that holding B while turning does a slower turn
 - incorporate the front leaf switch bumpers to set the bot up for autonomous driving
 - added a switch to toggle between automatic and manual driving modes
+
+From v3 and I guess v4?:
+- Adding the ultrasonic distance finder on servo turret to the front of the robot.
 */
