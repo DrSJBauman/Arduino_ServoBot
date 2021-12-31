@@ -11,6 +11,7 @@ void setup() {
   pinMode(bumpR, INPUT);
   pinMode(driveMode, INPUT);
   pinMode(echoPin, INPUT);
+  pinMode(irPin, INPUT);
 
   // Set appropriate pins to outputs
   pinMode(nesClock, OUTPUT);

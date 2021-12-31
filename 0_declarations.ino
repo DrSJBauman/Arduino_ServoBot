@@ -37,6 +37,7 @@ unsigned int duration, inches, cm;  // Var for time and distance measured by ult
 bool turretUp = 0;        // Boolean to tell which direction front turret servo is moving
 int servoPosition = 0;    // Var for front turret servo position (angle)
 int prevPosition = 0;     // Var for comparing to previous front servo position
+bool irStatus = 1;        // Boolean to tell the status of the IR detector.
 
 //===============================================================================
 //  Pin Declarations
@@ -48,6 +49,7 @@ const short bumpR = 3;          // The input from right leaf switch bumper
 const short driveMode = 4;      // Input from the auto/manual drive mode switch
 const short ledPin = 13;        // Built-in LED
 const short echoPin = 12;       // Echo pin on the ultrasonic distance sensor.
+const short irPin = A5;         // Data pin from the IR detector.
 
 //Outputs:
 const short nesClock = 5;       // The clock pin for the NES controller

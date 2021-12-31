@@ -4,7 +4,7 @@
 /* Activates the ultrasonic sensor's trigger pin, awaits the echoed ultrasound pulse,  
  *  and returns the distance between the nearest measured object and the sensor in centimeters.*/
 
-int sonarRead() {
+void sonarRead() {
   digitalWrite(trigPin, LOW);   // Ensure pin is low
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);  // Start ranging
@@ -18,12 +18,18 @@ int sonarRead() {
   cm = duration / 29 / 2;       // Converts to cm instead of inches
 
   if (cm < 7) {         // If sensor detects object close-approaching
-    Serial.println("Object within 7 cm.");
-    Serial.println("Avoiding head-on collision by autosteering.");
+    Serial.println("Object detected within 7 cm of front ultrasonic sensor.");
+    Serial.println("Avoiding head-on collision by autosteering.\n");
     slowReverse();
     delay(500);
     slowRight();
     delay(500);
   }  
-  return(cm);
+
+  else {
+    Serial.print("Ultrasonic read distance = ");
+    Serial.print(cm, DEC); // Show ultrasonic sensor distance in Serial Monitor
+    Serial.print(" cm");
+    Serial.println();
+  }
 }

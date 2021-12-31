@@ -75,7 +75,7 @@ void reverseLeft() {
 void slowForward() {
   reAttach();
   servoLeft.write(95);
-  servoRight.write(85);
+  servoRight.write(80);
 }
 
 void slowRight() {
@@ -86,12 +86,14 @@ void slowRight() {
 
 void slowReverse() {
   reAttach();
-  servoLeft.write(85);
-  servoRight.write(95);
+  if (irTest() == 1){
+    servoLeft.write(80);
+    servoRight.write(95);
+  }
 }
 
 void slowLeft() {
   reAttach();
-  servoLeft.write(85);
-  servoRight.write(85);
+  servoLeft.write(80);
+  servoRight.write(80);
 }

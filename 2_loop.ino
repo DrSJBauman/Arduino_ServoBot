@@ -9,15 +9,8 @@ void loop() {
 
     slowForward();                // Start forward automatically
     servoTurret();                // Run turret servo scanning routine   
-
-    // Test ultrasonic sensor distance
-    Serial.print("Ultrasonic read distance = ");
-    Serial.print(sonarRead(), DEC); // Show ultrasonic sensor distance in Serial Monitor
-    Serial.print(" cm");
-    Serial.println();
-
-    // Test bumper switches
-    bumpTest();
+    sonarRead();                  // Test ultrasonic sensor distance
+    bumpTest();                   // Test bumper switches
   }
 
   else {                          // Auto drive mode toggled OFF = LOW
