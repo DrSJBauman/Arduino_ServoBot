@@ -1,2 +1,1 @@
-# Arduino_ServoBot
-Trying to better understand git by committing all of the version updates to this project as different commits.
+See the Arduino sketch for the necessary notes in the form of comments.
