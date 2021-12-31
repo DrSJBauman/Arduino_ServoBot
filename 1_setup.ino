@@ -7,10 +7,15 @@ void setup() {
 
   // Set appropriate pins to inputs
   pinMode(nesData, INPUT);
+  pinMode(bumpL, INPUT);
+  pinMode(bumpR, INPUT);
+  pinMode(driveMode, INPUT);
+  pinMode(echoPin, INPUT);
 
   // Set appropriate pins to outputs
   pinMode(nesClock, OUTPUT);
   pinMode(nesLatch, OUTPUT);
+  pinMode(trigPin, OUTPUT);
 
   // Use the attach method to assign each object to a pin
   servoLeft.attach(LServoPin);

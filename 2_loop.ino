@@ -7,11 +7,9 @@ void loop() {
   // constants above for which button maps where!
   nesRegister = nesRead();
 
-  // If Right + Up button press
-  if (bitRead(nesRegister, RIGHT_BUTTON) == 0 && bitRead(nesRegister, UP_BUTTON) == 0) {
-    forwardRight();                  // Run the forward + right turn motion routine
-    Serial.println("UP + RIGHT");
-  }
+  // Check the auto/manual drive mode switch to determine which loop code to utilize
+  drvMode = digitalRead(driveMode);
+  if (drvMode == HIGH) {          // Auto drive mode toggled ON = HIGH
 
   // If Left + Up button press
   else if (bitRead(nesRegister, LEFT_BUTTON) == 0 && bitRead(nesRegister, UP_BUTTON) == 0) {
@@ -19,34 +17,24 @@ void loop() {
     Serial.println("UP + LEFT");
   }
 
-  // If Right + Down button press
-  else if (bitRead(nesRegister, RIGHT_BUTTON) == 0 && bitRead(nesRegister, DOWN_BUTTON) == 0) {
-    reverseRight();                  // Run the reverse + right turn motion routine
-    Serial.println("DOWN + RIGHT");
+    // Test ultrasonic sensor distance
+    Serial.print("Ultrasonic read distance = ");
+    Serial.print(sonarRead(), DEC); // Show ultrasonic sensor distance in Serial Monitor
+    Serial.print(" cm");
+    Serial.println();
+
+    // Test bumper switches
+    bumpTest();
   }
 
-  // If Left + Down button press
-  else if (bitRead(nesRegister, LEFT_BUTTON) == 0 && bitRead(nesRegister, DOWN_BUTTON) == 0) {
-    reverseLeft();                   // Run the reverse + right turn motion routine
-    Serial.println("UP + LEFT");
-  }
-    
-  else if (bitRead(nesRegister, RIGHT_BUTTON) == 0) {   // If Right button press
-    turnRight();                     // Run the right turn motion routine
-    Serial.println("RIGHT");
-  }
+  else {                              // Auto drive mode toggled OFF = LOW
+    // Manual drive mode condition:
+  
+    // This function call will return the states of all NES controller's register
+    // in a nice 8 bit variable format. Remember to refer to the table and
+    // constants in ServoBot_NES_Controller_vX.ino for which button maps where!
+    nesRegister = nesRead();
 
-  // If Left button press
-  else if (bitRead(nesRegister, LEFT_BUTTON) == 0) {   
-    turnLeft();                      // Run the left turn motion routine
-    Serial.println("LEFT");
-  }
-
-  // If Down button press
-  else if (bitRead(nesRegister, DOWN_BUTTON) == 0) {   
-      reverse();                     // Run the reverse motion routine
-      Serial.println("DOWN");
-  }
 
   // If Up button press
   else if (bitRead(nesRegister, UP_BUTTON) == 0) {   
@@ -85,5 +73,5 @@ void loop() {
 
   // Slight delay before we debug what was pressed so we don't spam the
   // serial monitor.
-  delay(100);
+  delay(50);
 }
