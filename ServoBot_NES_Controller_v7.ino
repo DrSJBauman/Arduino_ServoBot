@@ -7,7 +7,7 @@
     E-mail......... sjbauman0@gmail.com
     Started........ 10/11/2019
     Finished....... xx/xx/20XX
-    Updated........ 12/26/2021
+    Updated........ 12/28/2021
  
 ================================================================================
    Notes
@@ -69,4 +69,7 @@ From v3 and I guess v4?:
 
 From v5:
 - Added the front turret servo scanning functionality so it can scan while driving around autonomously.
+
+From v6:
+- Added the Sharp GP2Y0D810 IR Detector as a back-up collision sensor.
 */

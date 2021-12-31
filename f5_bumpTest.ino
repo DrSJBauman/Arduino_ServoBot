@@ -13,7 +13,7 @@ void bumpTest() {
 
   if (pbLeft == HIGH) {         // If left bumper hit
     digitalWrite(ledPin, HIGH); // LED on
-    Serial.println("Left bump, autosteering");
+    Serial.println("Left bump, autosteering to avoid collision. \n");
     slowReverse();
     delay(500);
     slowRight();
@@ -23,7 +23,7 @@ void bumpTest() {
 
   if (pbRight == HIGH) {        // If right bumper hit
     digitalWrite(ledPin, HIGH); // LED on
-    Serial.println("Right bump, autosteering");
+    Serial.println("Right bump, autosteering to avoid collision. \n");
     slowReverse();
     delay(500);
     slowLeft();

@@ -10,7 +10,7 @@
 
 void servoTurret() {
   servoPosition = servoFront.read();  // Check front servo position
-  Serial.println(servoPosition);
+  //Serial.println(servoPosition);
   
   // If servo is rotating right and hasn't reached max position, continue
   if ((servoPosition >= prevPosition) && (servoPosition < maxPosition)) {

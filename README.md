@@ -1,5 +1,8 @@
-v4 Incorporates interrupts in place of polling for the leaf switch bumpers.
-=======
-v2 adds additional functionality to the bot - specifically turning while moving forward or in reverse
-=======
-See the Arduino sketch for the necessary notes in the form of comments.
+Arduino_Servo code sets up input pins for sensing and feedback
+and output pins for motors and required outputs for sensors
+to enable a bimodal Arduino-controlled robot. In conjunction
+with mechanical switches on the robot chassis, a manual drive
+mode is possible via a hacked NES controller, and an automatic
+drive mode makes use of leaf switch bumpers, an ultrasonic
+distance sensor, and an infrared proximity sensor to avoid
+collisions.
