@@ -74,24 +74,24 @@ void reverseLeft() {
 // Try out these servo values with the actual setup to get the desired speed:
 void slowForward() {
   reAttach();
-  servoLeft.write(135);
-  servoRight.write(45);
+  servoLeft.write(95);
+  servoRight.write(85);
 }
 
 void slowRight() {
   reAttach();
-  servoLeft.write(135);
-  servoRight.write(135);
+  servoLeft.write(95);
+  servoRight.write(95);
 }
 
 void slowReverse() {
   reAttach();
-  servoLeft.write(45);
-  servoRight.write(135);
+  servoLeft.write(85);
+  servoRight.write(95);
 }
 
 void slowLeft() {
   reAttach();
-  servoLeft.write(45);
-  servoRight.write(45);
+  servoLeft.write(85);
+  servoRight.write(85);
 }

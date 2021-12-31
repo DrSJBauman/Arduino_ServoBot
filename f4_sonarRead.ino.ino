@@ -17,13 +17,13 @@ int sonarRead() {
   inches = duration / 74 / 2;   // 1130 ft/s = 13560 in/s or 1 inch in 74 µs
   cm = duration / 29 / 2;       // Converts to cm instead of inches
 
-  if (cm < 6) {         // If sensor detects object close-approaching
-    Serial.println("Object within 6 cm.");
+  if (cm < 7) {         // If sensor detects object close-approaching
+    Serial.println("Object within 7 cm.");
     Serial.println("Avoiding head-on collision by autosteering.");
     slowReverse();
     delay(500);
     slowRight();
-    delay(1000);
+    delay(500);
   }  
   return(cm);
 }

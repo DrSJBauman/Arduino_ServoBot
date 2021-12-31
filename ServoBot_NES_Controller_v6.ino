@@ -7,7 +7,7 @@
     E-mail......... sjbauman0@gmail.com
     Started........ 10/11/2019
     Finished....... xx/xx/20XX
-    Updated........ 12/25/2021
+    Updated........ 12/26/2021
  
 ================================================================================
    Notes
@@ -66,4 +66,7 @@ From v2:
 
 From v3 and I guess v4?:
 - Adding the ultrasonic distance finder on servo turret to the front of the robot.
+
+From v5:
+- Added the front turret servo scanning functionality so it can scan while driving around autonomously.
 */
