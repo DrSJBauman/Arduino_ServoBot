@@ -1,2 +1,1 @@
-# Arduino_ServoBot
-Updated code for my homemade Arduino robot, now incorporating leaf switches for front right/left impact sensing.
+v3 Incorporates the front leaf switch bumpers to prepare the bot for some autonomous driving.
