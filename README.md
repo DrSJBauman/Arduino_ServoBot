@@ -1,2 +1,1 @@
-# Arduino_ServoBot
-Split sketches for ease of use, added forward/reverse + right/left turning control, modified input declarations, added comments.
+v2 adds additional functionality to the bot - specifically turning while moving forward or in reverse
