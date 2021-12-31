@@ -7,9 +7,6 @@ void setup() {
 
   // Set appropriate pins to inputs
   pinMode(nesData, INPUT);
-  pinMode(bumpL, INPUT);
-  pinMode(bumpR, INPUT);
-  pinMode(driveMode, INPUT);
 
   // Set appropriate pins to outputs
   pinMode(nesClock, OUTPUT);
