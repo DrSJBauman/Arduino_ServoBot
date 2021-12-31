@@ -20,6 +20,7 @@ void setup() {
   // Use the attach method to assign each object to a pin
   servoLeft.attach(LServoPin);
   servoRight.attach(RServoPin);
+  servoFront.attach(FServoPin);
 
   // Set initial states
   digitalWrite(nesLatch, LOW);

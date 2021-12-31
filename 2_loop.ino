@@ -11,11 +11,8 @@ void loop() {
   drvMode = digitalRead(driveMode);
   if (drvMode == HIGH) {          // Auto drive mode toggled ON = HIGH
 
-  // If Left + Up button press
-  else if (bitRead(nesRegister, LEFT_BUTTON) == 0 && bitRead(nesRegister, UP_BUTTON) == 0) {
-    forwardLeft();                   // Run the forward + left turn motion routine
-    Serial.println("UP + LEFT");
-  }
+    slowForward();                // Start forward automatically
+    servoTurret();                // Run turret servo scanning routine   
 
     // Test ultrasonic sensor distance
     Serial.print("Ultrasonic read distance = ");
@@ -27,7 +24,7 @@ void loop() {
     bumpTest();
   }
 
-  else {                              // Auto drive mode toggled OFF = LOW
+  else {                          // Auto drive mode toggled OFF = LOW
     // Manual drive mode condition:
   
     // This function call will return the states of all NES controller's register
@@ -35,6 +32,25 @@ void loop() {
     // constants in ServoBot_NES_Controller_vX.ino for which button maps where!
     nesRegister = nesRead();
 
+    // If A + directional button press
+    /* I just had the wild idea to make this functionality something like a way to control the 
+     *  front turret servo manually. Left and right can rotate the turret. What about up and down?
+     *  And if I'm driving this thing around, is there a way to get it to output this distance data anyway?
+     *  I could put a screen on it that displays the data...
+     */
+    if (bitRead(nesRegister, A_BUTTON) == 0 && bitRead(nesRegister, UP_BUTTON) == 0) {   
+      //slowForward();
+      Serial.println("A + UP");
+    } else if (bitRead(nesRegister, A_BUTTON) == 0 && bitRead(nesRegister, DOWN_BUTTON) == 0) {
+      //slowReverse();
+      Serial.println("A + DOWN");
+    } else if (bitRead(nesRegister, A_BUTTON) == 0 && bitRead(nesRegister, RIGHT_BUTTON) == 0) {
+      //slowRight();
+      Serial.println("A + RIGHT");
+    } else if (bitRead(nesRegister, A_BUTTON) == 0 && bitRead(nesRegister, LEFT_BUTTON) == 0) {
+      //slowLeft();
+      Serial.println("A + LEFT");
+    }
 
   // If Up button press
   else if (bitRead(nesRegister, UP_BUTTON) == 0) {   
